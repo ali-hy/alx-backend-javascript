@@ -6,14 +6,7 @@ class Car {
   }
 
   cloneCar() {
-    const symbolKeys = Object.getOwnPropertySymbols(this);
-    const clonedCar = new Car();
-
-    for (const key of symbolKeys) {
-      clonedCar[key] = this[key];
-    }
-
-    return clonedCar;
+    return new Car();
   }
 }
 
