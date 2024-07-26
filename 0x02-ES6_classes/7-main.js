@@ -1,4 +1,4 @@
-import Airport from "./7-airport.js";
+import Airport from './7-airport';
 
 const airportSF = new Airport('San Francisco Airport', 'SFO');
 console.log(airportSF);
