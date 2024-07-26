@@ -6,7 +6,7 @@ class Car {
   }
 
   cloneCar() {
-    return new Car();
+    return Object.create(Object.getPrototypeOf(this));
   }
 }
 
