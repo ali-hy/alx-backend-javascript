@@ -26,12 +26,12 @@ const countStudents = (filePath) => new Promise((resolve, reject) => {
         );
 
         for (const line of lines.slice(1)) {
-          const studentRecord = line.split(',');
-          const studentPropValues = studentRecord.slice(
+          const studentRow = line.split(',');
+          const studentPropValues = studentRow.slice(
             0,
-            studentRecord.length - 1,
+            studentRow.length - 1,
           );
-          const field = studentRecord[studentRecord.length - 1];
+          const field = studentRow[studentRow.length - 1];
           if (!Object.keys(studentGroups).includes(field)) {
             studentGroups[field] = [];
           }

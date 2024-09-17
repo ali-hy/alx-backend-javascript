@@ -16,10 +16,10 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
         .slice(0, dbFieldNames.length - 1);
 
       for (const line of fileLines.slice(1)) {
-        const studentRecord = line.split(',');
-        const studentPropValues = studentRecord
-          .slice(0, studentRecord.length - 1);
-        const field = studentRecord[studentRecord.length - 1];
+        const studentRow = line.split(',');
+        const studentPropValues = studentRow
+          .slice(0, studentRow.length - 1);
+        const field = studentRow[studentRow.length - 1];
         if (!Object.keys(studentGroups).includes(field)) {
           studentGroups[field] = [];
         }
