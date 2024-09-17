@@ -74,8 +74,8 @@ app.get('/students', (_, res) => {
       res.statusCode = 200;
       res.write(Buffer.from(responseText));
     })
-    .catch((err) => {
-      responseParts.push(err instanceof Error ? err.message : err.toString());
+    .catch((error) => {
+      responseParts.push(error instanceof Error ? error.message : error.toString());
       const responseText = responseParts.join('\n');
       res.setHeader('Content-Type', 'text/plain');
       res.setHeader('Content-Length', responseText.length);

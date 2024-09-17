@@ -11,8 +11,8 @@ const countStudents = (filePath) => new Promise((resolve, reject) => {
     reject(new Error('Cannot load the database'));
   }
   if (filePath) {
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
+    fs.readFile(filePath, (error, data) => {
+      if (error) {
         reject(new Error('Cannot load the database'));
       }
       if (data) {
@@ -85,8 +85,8 @@ const SERVER_ROUTE_HANDLERS = [
           res.statusCode = 200;
           res.write(Buffer.from(responseText));
         })
-        .catch((err) => {
-          responseParts.push(err instanceof Error ? err.message : err.toString());
+        .catch((error) => {
+          responseParts.push(error instanceof Error ? error.message : error.toString());
           const responseText = responseParts.join('\n');
           res.setHeader('Content-Type', 'text/plain');
           res.setHeader('Content-Length', responseText.length);
