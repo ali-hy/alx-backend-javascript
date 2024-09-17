@@ -1,9 +1,11 @@
+const fs = require('fs');
+
 module.exports = function countStudents(filePath) {
   try {
-    const data = fs.readFileSync
-    (filePath, { encoding: 'utf8' }).split('\n');
-    let students = data.slice(1, data.length - 1);
-    let fields = {};
+    const data = fs.readFileSync(filePath, { encoding: 'utf8' })
+      .split('\n');
+    const students = data.slice(1, data.length - 1);
+    const fields = {};
     for (const student of students) {
       if (student in fields) {
         fields[student] += 1;
@@ -21,4 +23,4 @@ module.exports = function countStudents(filePath) {
   } catch (error) {
     throw new Error('Cannot load the database');
   }
-}
+};
