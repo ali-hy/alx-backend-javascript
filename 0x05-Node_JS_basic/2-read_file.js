@@ -1,7 +1,7 @@
-module.exports = function countStudents(path) {
+module.exports = function countStudents(filePath) {
   try {
     const data = fs.readFileSync
-    (path, { encoding: 'utf8' }).split('\n');
+    (filePath, { encoding: 'utf8' }).split('\n');
     let students = data.slice(1, data.length - 1);
     let fields = {};
     for (const student of students) {
