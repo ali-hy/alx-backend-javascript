@@ -4,7 +4,9 @@ displayMessage('Welcome to Holberton School, what is your name?');
 
 process.stdin.on('data', (data) => {
   const name = data.toString().trim();
-  displayMessage(`Your name is: ${name}`);
+
+  if (name)
+    displayMessage(`Your name is: ${name}`);
   process.exit();
 });
 
